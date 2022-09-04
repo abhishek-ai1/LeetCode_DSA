@@ -1,0 +1,15 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        definition_dict = dict.fromkeys(s)
+        values_list = []
+        for idx in range(len(s)):
+            if definition_dict.get(s[idx]) is None:
+                if t[idx] not in values_list:
+                    definition_dict.update({s[idx]: t[idx]})
+                    values_list.append(t[idx])
+                else:
+                    return False
+            else:
+                if definition_dict.get(s[idx]) != t[idx]:
+                    return False
+        return True
