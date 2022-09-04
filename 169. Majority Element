@@ -1,0 +1,9 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        vote, majority = 0, None
+        
+        for n in nums:
+            if vote == 0: majority = n
+            vote += (1 if majority == n else -1)
+        
+        return majority
