@@ -1,0 +1,5 @@
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        while (val in nums): # checks if 'val' is present in list
+            nums.remove(val) # if value is present, removes its first occurence
+        return len(nums)
