@@ -1,0 +1,9 @@
+from math import comb
+class Solution:
+    def triangularSum(self, nums: List[int]) -> int:
+        ans = 0
+        n = len(nums) - 1
+        for i,j in enumerate(nums):
+            ncr = comb(n,i)
+            ans = (ans + ncr*j)%10
+        return ans
